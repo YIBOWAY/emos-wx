@@ -41,7 +41,7 @@ _vue.default.prototype.ajax = function (url, method, data, fun) {
           url: "/pages/login/login.vue" });
 
       } else
-      if (resp.statusCode == 200 && resp.data.code == 200) {
+      if (resp.statusCode == 200 && resp.data.code == 200) {//得到回调函数的应答，查看应答中包含的token令牌
         var _data = resp.data;
         if (_data.hasOwnProperty("token")) {
           console.log(resp.data);
