@@ -15,7 +15,10 @@ let baseUrl = "http://192.168.1.108:8080/emos-wx-api"
 
 Vue.prototype.url={
 	register: baseUrl + "/user/register",
-	login: baseUrl + "/user/login"
+	login: baseUrl + "/user/login",
+	checkin: baseUrl + "/checkin/checkin",
+	createFaceModel: baseUrl + "/checkin/createFaceModel",
+	validCanCheckin: baseUrl + "/checkin/validCanCheckIn"
 }
 
 Vue.prototype.ajax = function(url,method,data,fun){
@@ -32,7 +35,7 @@ Vue.prototype.ajax = function(url,method,data,fun){
 					url:"/pages/login/login.vue"
 				})
 			}
-			else if(resp.statusCode == 200 && resp.data.code == 200){//得到回调函数的应答，查看应答中包含的token令牌
+			else if(resp.statusCode == 200 && resp.data.code == 200){//得到回调函数的应答，查看应答中包含的token令牌，后台生成的JWT
 				let data = resp.data
 				if(data.hasOwnProperty("token")){
 					console.log(resp.data)

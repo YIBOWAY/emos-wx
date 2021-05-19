@@ -53,5 +53,11 @@
       }
     ]
   },
-  "usingComponents": {}
+  "permission": {
+    "scope.userLocation": {
+      "desc": "学习用"
+    }
+  },
+  "usingComponents": {},
+  "sitemapLocation": "sitemap23.json"
 }
